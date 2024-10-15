@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Operations</title>
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Text Operations</h1>
+    <textarea id="inputText" rows="4" cols="50"></textarea><br><br>
+   
+    <textarea id="outputText" rows="4" cols="50" readonly></textarea>
+    <br>
+    <button onclick="toUpperCase()">Upper Case</button>
+    <button onclick="toLowerCase()">Lower Case</button>
+    <button onclick="wordCount()">Word Count</button>
+    <button onclick="charCount()">Character Count</button>
+    
+    <script>
+        function toUpperCase() {
+            let text = document.getElementById('inputText').value;
+            document.getElementById('outputText').value = text.toUpperCase();
+        }
+        
+        function toLowerCase() {
+            let text = document.getElementById('inputText').value;
+            document.getElementById('outputText').value = text.toLowerCase();
+        }
+        
+        function wordCount() {
+            let text = document.getElementById('inputText').value;
+            let words = text.trim().split(/\s+/).length;
+            document.getElementById('outputText').value = "Word Count: " + words;
+        }
+        
+        function charCount() {
+            let text = document.getElementById('inputText').value;
+            let characters = text.length;
+            document.getElementById('outputText').value = "Character Count: " + characters;
+        }
+        
+    </script>
+</body>
+</html>
